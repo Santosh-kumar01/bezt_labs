@@ -5,14 +5,20 @@ import { Button } from "@/components/ui/button";
 import useSWR from "swr";
 import axios from "axios";
 import React, { useState } from "react";
+import { Product } from "@/types/Products";
 
-const fetcher = (url: string) => axios.get(url).then((res) => res.data.products);
+
+const fetcher = (url: string): Promise<Product[]> =>
+  axios.get(url).then((res) => res.data.products);
 
 const Page = () => {
   const categories = ["Donuts", "Ice-Cream", "Bomboloni"];
   const [activeCategory, setActiveCategory] = useState(categories[0]);
 
-  const { data: products, error, isLoading } = useSWR("https://dummyjson.com/products", fetcher);
+  const { data: products, error, isLoading } = useSWR<Product[]>(
+    "https://dummyjson.com/products",
+    fetcher
+  );
 
   if (error) return <p className="text-center mt-10">Failed to load products 😞</p>;
   if (isLoading) return <p className="text-center mt-10">Loading products... ⏳</p>;
@@ -37,8 +43,10 @@ const Page = () => {
 
       <div>
         <div className="grid grid-cols-2 gap-2">
-          {products.length > 0 ? (
-            products.map((product, index) => <ProductCard key={index} product={product} />)
+          {products && products.length > 0 ? (
+            products.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))
           ) : (
             <p className="text-center col-span-2">No products found</p>
           )}
