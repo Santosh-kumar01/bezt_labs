@@ -45,8 +45,8 @@ const Page = () => {
   }
 
   return (
-    <div className="  w-full relative ">
-      <div className="pb-10">
+    <div className="flex flex-col min-h-screen ">
+      <div className="pb-10 flex-1">
         <div className="py-7">
           <button onClick={() => router.push("/products")}>
             <ChevronLeft />
@@ -83,8 +83,8 @@ const Page = () => {
           <h1>${product.price}</h1>
         </div>
       </div>
-      <div className=" sticky bottom-4">
-        <Button className="  w-full bg-[#F1CF59] py-5 text-lg rounded-lg">
+      <div className="w-full py-4 px-6 sticky bottom-0">
+        <Button className="w-full bg-[#F1CF59] py-5 text-lg rounded-lg">
           Add to Cart
         </Button>
       </div>
