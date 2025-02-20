@@ -34,8 +34,8 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             <Star color="#F1CF59" fill="#F1CF59" size={17} />
             <h1>{product.rating}</h1>
           </div>
-          <h1 className="font-medium line-clamp-1">{product.title}</h1>
-          <h2 className="line-clamp-1 py-1 text-zinc-400">
+          <h1 className="font-medium line-clamp-1 text-base">{product.title}</h1>
+          <h2 className="line-clamp-1  text-zinc-400 text-sm ">
             {product.description}
           </h2>
         </CardContent>
