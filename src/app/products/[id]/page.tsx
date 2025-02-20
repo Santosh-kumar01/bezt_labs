@@ -50,13 +50,13 @@ const Page = () => {
       </div>
       <div>
         <div className="flex justify-between gap-2 mt-4">
-          <h1 className="font-medium text-xl">{product.title}</h1>
+          <h1 className="font-medium text-xl py-1">{product.title}</h1>
           <div className="flex gap-2">
             <Star color="#F1CF59" fill="#F1CF59" size={20} />
             <h1>{product.rating}</h1>
           </div>
         </div>
-        <h2 className="line-clamp-3 max-w-80">{product.description}</h2>
+        <h2 className="line-clamp-3 max-w-80 text-zinc-400">{product.description}</h2>
       </div>
       <div className="flex justify-between items-center p-3 pt-0 py-8 mt-6">
         <div className="flex gap-4">
@@ -67,7 +67,7 @@ const Page = () => {
         <h1>${product.price}</h1>
       </div>
 
-      <Button className="absolute bottom-6 w-full bg-[#F1CF59] py-6 text-lg rounded-lg">
+      <Button className="absolute bottom-5 w-full bg-[#F1CF59] py-5 text-lg rounded-lg">
         Add to Cart
       </Button>
     </div>
