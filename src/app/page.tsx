@@ -5,7 +5,7 @@ import React from 'react'
 
 const page = () => {
   return (
-    <div className=' w-full h-full flex justify-center items-center flex-col gap-5'>
+    <div className=' w-full h-full text-6xl flex justify-center items-center flex-col gap-2 font-serif'>
       Welcome
       <Link href="/products">
       <Button>Explore Products</Button>
